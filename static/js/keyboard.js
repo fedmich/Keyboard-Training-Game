@@ -4,6 +4,7 @@ console.log('keyboard');
 var SCORE_PENALIZE_MOUSE = 5;
 
 var sec = 0;
+var sec_ms = 0;
 var game_running = false;
 
 var messages =
@@ -17,15 +18,30 @@ var penalized = false;
 var current_stage = 0;
 
 var timer_game;
+var timer_game2;
 
 function increment_timer(){
 	sec += 1;
 	
-	//TODO: dot milisecond display
-	$('#score').text( sec + ' sec' );
+	display_time();
 	
 	timer_game = setTimeout( increment_timer, 1000 );
 }
+
+function increment_timer_ms (){
+	sec_ms += 1;
+	if( sec_ms > 9){
+		sec_ms = 0;
+	}
+	display_time();
+
+	timer_game2 = setTimeout( increment_timer_ms, 100 );
+}
+
+function display_time(){
+	$('#score').text( sec + '.' + sec_ms + ' sec' );
+}
+
 
 var box_penalty;
 $(function() {
@@ -60,7 +76,7 @@ function hookup_mouse(){
 			sec = sec + SCORE_PENALIZE_MOUSE;
 			
 			box_penalty.show();
-			$('#score').text( sec + ' sec' );
+			display_time();
 		}
 		penalized = true;
 		
@@ -117,11 +133,15 @@ function setup_stage ( stage_num ){
 
 	//Start the timer!
 	timer_game = setTimeout( increment_timer, 1000 );
+
+	//Start the ms timer!
+	timer_game2 = setTimeout( increment_timer_ms, 100 );
 }
 
 function show_complete_stage(){
-	//STOP the timer
+	//STOP the timers
 	clearTimeout( timer_game );
+	clearTimeout( timer_game2 );
 	
 	console.log('completed!');
 	
