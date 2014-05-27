@@ -56,6 +56,11 @@ $(function() {
 		$('.game_start').show();
 		
 		setup_stage( 1 );
+	$('.play_next').click(function(){
+		$('.stage_completed').hide();
+
+		current_stage += 1;
+		setup_stage( current_stage );
 	});
 });
 
@@ -101,6 +106,9 @@ function setup_stage ( stage_num ){
 	
 	$('.message').text( messages[ "stage_" + stage_num ] );
 	
+	$('.stage').hide();
+	$('.stage_' + current_stage ).show();
+
 	switch( stage_num ){
 	case 1:
 		
@@ -148,4 +156,9 @@ function show_complete_stage(){
 	$('.message').text( "Stage " + current_stage + " completed!" ).addClass('alert-success').removeClass('alert-info');
 
 	game_running = false;
+
+	$('.stage').hide();
+	$('.stage_completed').show();
+
+	$('.play_next').focus();
 }
