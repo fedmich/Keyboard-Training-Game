@@ -58,6 +58,9 @@ $(function() {
 		$('.game_start').show();
 		
 		setup_stage( 1 );
+
+	});
+
 	$('.play_next').click(function(){
 		$('.stage_completed').hide();
 
