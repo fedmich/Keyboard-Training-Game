@@ -10,6 +10,7 @@ var game_running = false;
 var messages =
 	{
 	stage_1: "Copy this first and last name to the appropriate fields on the left ..."
+	, stage_2 : "Now type the following in the comments field:"
 	}
 
 
@@ -135,6 +136,22 @@ function setup_stage ( stage_num ){
 			
 		});
 		
+		break;
+	case 2:
+		var correct_answer = $.trim( $('.stage_2').text() );
+		var obj_text = $('#comments');
+		obj_text.keypress( function ( event ){
+
+			//set time out so this will trigger 100ms after keypress-ing
+			setTimeout(function(){
+
+				var user_text = $.trim( obj_text.val() );
+				if( user_text == correct_answer ){
+					show_complete_stage();
+				}
+
+			} , 100);
+		});
 	}
 	
 	game_running = true;
