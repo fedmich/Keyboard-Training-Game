@@ -7,6 +7,7 @@ var sec = 0;
 var sec_ms = 0;
 var game_running = false;
 
+var total_stages = 2;
 var messages =
 	{
 	stage_1: "Copy this first and last name to the appropriate fields on the left ..."
@@ -178,4 +179,7 @@ function show_complete_stage(){
 	$('.stage_completed').show();
 
 	$('.play_next').focus();
+	if( current_stage == total_stages ){
+		$('.box_next_stage').hide();
+	}
 }
