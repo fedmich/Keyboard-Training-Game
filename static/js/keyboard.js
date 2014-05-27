@@ -4,7 +4,7 @@ console.log('keyboard');
 var SCORE_PENALIZE_MOUSE = 5;
 
 var sec = 0;
-
+var game_running = false;
 
 var messages =
 	{
@@ -46,6 +46,9 @@ $(function() {
 
 function hookup_mouse(){
 	$('.no_mouse').hover( function (){
+		if(! game_running ){
+			return false;
+		}
 		var err_box = $('.error_mouse');
 		err_box.addClass('alert-danger').removeClass('alert-warning');
 		
@@ -110,6 +113,8 @@ function setup_stage ( stage_num ){
 		
 	}
 	
+	game_running = true;
+
 	//Start the timer!
 	timer_game = setTimeout( increment_timer, 1000 );
 }
@@ -121,4 +126,6 @@ function show_complete_stage(){
 	console.log('completed!');
 	
 	$('.message').text( "Stage " + current_stage + " completed!" ).addClass('alert-success').removeClass('alert-info');
+
+	game_running = false;
 }
