@@ -1,0 +1,42 @@
+body.has_navbar {
+	padding-top: 45px;
+}
+@media (max-width: 979px) {
+  body.has_navbar {
+    padding-top: 0px;
+  }
+}
+
+.body_container{
+	max-width: 1000px;
+	margin:auto;
+}
+
+.no_mouse:hover{
+	background-color:#E7D4D4;
+	color:#b94a48;
+}
+
+.field_box legend {
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+}
+
+.field_box{
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+
+.box_left{
+	width:40%;
+	float:left;
+}
+.box_right{
+	width:40%;
+	float:left;
+}

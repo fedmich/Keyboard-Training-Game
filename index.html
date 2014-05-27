@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" >
+<head>
+
+	<title>Keyboard Training App</title>
+	
+	<link href="static/bootstrap3/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="static/css/keyboard.css" rel="stylesheet" type="text/css" media="all" />
+		
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<script type="text/javascript" src="static/js/lib/jquery-1.7.1.min.js"></script>
+	
+	<script type="text/javascript" src="static/js/keyboard.js"></script>
+	
+</head>
+<body class="has_navbar">
+	<div class="container-fluid">
+	
+
+<!-- Static navbar -->
+  <div class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+	<div class="container-fluid">
+	  <div class="navbar-header">
+	  	<a class="navbar-brand" href="#">Keyboard Training app</a>
+		
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+	  </div>
+	  
+	</div><!--/.container-fluid -->
+  </div>
+
+  
+
+  
+	</div>
+	<div class="container-fluid body_container">
+		<div class="row-fluid">
+			<h1>Keyboard Training App</h1>
+		</div>
+		
+		<br />
+		
+		<div class="row-fluid">
+			<div class="col-sm-6 box_left no_mouse">
+				<fieldset class="field_box">
+					<legend class="app-border">Typical Checkout Form</legend>
+					
+					<input type="text" id="first" name="first" value="First Name" />
+					
+					<input type="text" id="last" name="last" value="Last Name" />
+					
+					<br />
+					<br />
+					
+					<input type="text" id="email" name="email" value="Email" />
+					
+					
+					<input type="text" id="telephone" name="telephone" value="Telephone" />
+					
+					<br />
+					<br />
+					
+					<input type="text" id="address_1" name="address_1" value="Address Line 1" />
+					<br />
+					<br />
+					<input type="text" id="address_1" name="address_1" value="Address Line 2" />
+					
+					<br />
+					<br />
+					
+					<input type="text" id="city" name="city" value="city" />
+					
+					<br />
+					<br />
+					
+					<select name="country" id="country">
+						<option></option>
+						<option>Philippines</option>
+						<option>Singapore</option>
+					</select>
+					
+					<br />
+					<br />
+					
+					<textarea rows="4" cols="50" name="comments" id="comments">Comments</textarea>
+					
+					
+					
+				</fieldset>
+			</div>
+			<div class="col-sm-6 box_right">
+				
+				<h3 class="score_box" style="display:none;">
+				Score: 
+				<b id="score">0 Sec</b>
+				Stage: 
+				<b id="stage">1</b>
+				</h3>
+				
+				<fieldset class="field_box no_mouse">
+					<legend>Interactive Game Instructions</legend>
+					
+					
+					<div class="pre-game">
+						<p>
+						Are you ready to start the game?
+						<br />
+						Press ENTER to start.
+						</p>
+						
+						<a href="#" class="btn btn-primary btn_startgame">START GAME!</a>
+							
+						<br />
+						<br />
+						<br />
+						
+						<div class="alert alert-warning error_mouse">
+							<h2>Remember:</h2>
+							<p>
+							Don't use the mouse!
+							</p>
+						</div>
+						
+						
+					</div>
+					
+					<div class="game_start" style="display:none;">
+					<div class="message alert alert-info">
+						Copy this first and last name to the appropriate fields on the left ...
+					</div>
+					
+					<div class="stage_1">
+						First name : <input type="text" value="John" />
+						<br />
+						Last name : <input type="text" value="Smith" />
+					</div>
+					
+					</div>
+					
+					<div class="erro_msg_penalty" style="display:none;">
+						<h2>You used the mouse!</h2>
+						
+						<div class="alert alert-danger">
+							<h2>5 Second Penalty</h2>
+						</div>
+					</div>
+					
+					
+					<div class="">
+					</div>
+				</fieldset>
+			</div>
+		</div>
+		
+		
+		<div class="clear"></div>
+	</div> <!-- /container -->
+	
+	
+	<script type="text/javascript" src="static/bootstrap3/js/bootstrap.min.js"></script>
+	
+	
+</body>
+</html>
